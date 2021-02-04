@@ -1,0 +1,2 @@
+class CheckbooksController < ApplicationController
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: MyString
+  timeline: MyString
+  amount: 1
+
+two:
+  type: 
+  name: MyString
+  timeline: MyString
+  amount: 1

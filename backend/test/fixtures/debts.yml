@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  amount: 1
+  min_payment: 1
+  company: MyString
+
+two:
+  type: 
+  amount: 1
+  min_payment: 1
+  company: MyString
