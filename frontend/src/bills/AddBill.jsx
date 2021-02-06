@@ -3,22 +3,17 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-export default function Bills() {
+export default function AddBill() {
     return (
       <div>
-        <Form>
+        <Form className='form shadow'>
           <Form.Row>
-              <Form.Group as={Col} xs="auto" controlId="formGridCity">
-                <Form.Label> Bill Name</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-            <Form.Group as={Col} xs="auto" controlId="formGridState">
-              <Form.Label>Amount</Form.Label>
+            <Form.Group as={Col} xs="auto">
+              <Form.Label> Bill Name</Form.Label>
               <Form.Control />
             </Form.Group>
 
-            <Form.Group as={Col} xs="auto" controlId="formGridZip">
+            <Form.Group as={Col} xs="auto">
               <Form.Label>Due Date</Form.Label>
               <Form.Control as="select" defaultValue="Choose...">
                 <option value='0'>Choose...</option>
@@ -58,7 +53,12 @@ export default function Bills() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} xs="auto" controlId="exampleForm.ControlSelect1">
+          <Form.Group as={Col} xs="auto">
+              <Form.Label>Amount</Form.Label>
+              <Form.Control />
+            </Form.Group>
+
+            <Form.Group as={Col} xs="auto">
               <Form.Label>Frequency</Form.Label>
               <Form.Control as="select" defaultValue="Choose...">
                 <option value='0'>Choose...</option>
@@ -69,8 +69,10 @@ export default function Bills() {
                 {/* make sure to add more options later */}
               </Form.Control>
             </Form.Group>
-              <Col xs="auto">
-                <Button  type="submit" className="mb-1">Submit</Button>
+          </Form.Row>
+          <Form.Row>
+            <Col xs="auto">
+                <Button  type="submit">Submit</Button>
               </Col>
           </Form.Row>
         </Form>
