@@ -5,6 +5,7 @@ class CreateGoals < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :timeline
       t.integer :amount
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

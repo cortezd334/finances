@@ -30,4 +30,6 @@ class BillsController < ApplicationController
     private
     def bill_params
         params.require(:bill).permit(:id, :name, :frequency, :amount, :due_date)
+    end
+    
 end

@@ -5,6 +5,7 @@ class CreateBills < ActiveRecord::Migration[6.1]
       t.string :frequency
       t.string :amount
       t.integer :due_date
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
