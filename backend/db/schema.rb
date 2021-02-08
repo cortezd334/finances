@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
     t.string "frequency"
     t.string "amount"
     t.integer "due_date"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
   create_table "checkbooks", force: :cascade do |t|
@@ -31,8 +33,10 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
     t.string "date"
     t.boolean "cleared"
     t.string "memo"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_checkbooks_on_user_id"
   end
 
   create_table "debts", force: :cascade do |t|
@@ -41,8 +45,10 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
     t.integer "min_payment"
     t.integer "interest"
     t.string "company"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_debts_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -50,16 +56,20 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
     t.string "name"
     t.string "timeline"
     t.integer "amount"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
     t.string "name"
     t.string "frequency"
     t.integer "amount"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +81,9 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bills", "users"
+  add_foreign_key "checkbooks", "users"
+  add_foreign_key "debts", "users"
+  add_foreign_key "goals", "users"
+  add_foreign_key "incomes", "users"
 end

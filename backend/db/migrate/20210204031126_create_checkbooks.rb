@@ -7,6 +7,7 @@ class CreateCheckbooks < ActiveRecord::Migration[6.1]
       t.string :date
       t.boolean :cleared
       t.string :memo
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
