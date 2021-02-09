@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_031126) do
 
   create_table "bills", force: :cascade do |t|
     t.string "name"
-    t.string "frequency"
+    t.integer "frequency"
     t.string "amount"
     t.integer "due_date"
     t.bigint "user_id", null: false
