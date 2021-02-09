@@ -2,7 +2,7 @@ class CreateBills < ActiveRecord::Migration[6.1]
   def change
     create_table :bills do |t|
       t.string :name
-      t.string :frequency
+      t.integer :frequency
       t.string :amount
       t.integer :due_date
       t.references :user, null: false, foreign_key: true
