@@ -14,3 +14,12 @@ export async function fetchBills() {
     })
     return await resp.json()
 }
+
+export async function addBill(data) {
+    const resp = await fetch(`${API}/bills`, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+    return await resp.json()
+}
